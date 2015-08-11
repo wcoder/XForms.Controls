@@ -1,23 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-  xmlns="http://xamarin.com/schemas/2014/forms"
-  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-  xmlns:converters="clr-namespace:XFormsControls.UI.Converters;assembly=XFormsControls.UI"
-  xmlns:controls="clr-namespace:XFormsControls.UI.Controls;assembly=XFormsControls.UI"
-  x:Class="XFormsControls.Pages.MainPage">
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:converters="clr-namespace:XFormsControls.Converters;assembly=XFormsControls"
+	xmlns:controls="clr-namespace:XFormsControls.Controls;assembly=XFormsControls"
+	x:Class="XFormsControls.Pages.MainPage">
 
-  <ContentPage.Resources>
-    <ResourceDictionary>
-      <converters:ObjectToListItemConverter x:Key="ObjectToListItemConverter"/>
-    </ResourceDictionary>
-  </ContentPage.Resources>
-  
-  <StackLayout>
-    <controls:ListPicker
-      Converter="{StaticResource ObjectToListItemConverter}"
-      ItemsSource="{Binding Members}"
-      SelectedItem="{Binding Member, Mode=TwoWay}"
-      />
-    <Label Text="{Binding Member, StringFormat='Selected item: {0}'}" />
-  </StackLayout>
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<converters:ObjectToListItemConverter x:Key="ObjectToListItemConverter"/>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
+	<StackLayout>
+		<controls:ListPicker
+			Converter="{StaticResource ObjectToListItemConverter}"
+			ItemsSource="{Binding Members}"
+			SelectedItem="{Binding Member, Mode=TwoWay}" />
+		<Label Text="{Binding Member, StringFormat='Selected item: {0}'}" />
+
+		<controls:CheckBox CheckedText="Checked Text" UncheckedText="Unchecked Text"/>
+	</StackLayout>	
 </ContentPage>
