@@ -2,7 +2,7 @@
 using System.Collections;
 using Xamarin.Forms;
 
-namespace XFormsControls.UI.Controls
+namespace XFormsControls.Controls
 {
     public class ListPicker : Picker
     {
