@@ -20,5 +20,8 @@
 		<Label Text="{Binding Member, StringFormat='Selected item: {0}'}" />
 
 		<controls:CheckBox CheckedText="Checked Text" UncheckedText="Unchecked Text"/>
+
+		<Button Command="{Binding AddCommand}" Text="Add book"/>
+		<controls:CustomListView ItemsSource="{Binding Books}" ItemTemplate="MainItemTemplate" />
 	</StackLayout>	
 </ContentPage>
