@@ -39,6 +39,7 @@
     <Compile Include="Controls\CheckBox.cs" />
     <Compile Include="Controls\CustomListView.cs" />
     <Compile Include="Controls\ListPicker.cs" />
+    <Compile Include="Controls\XListView.cs" />
     <Compile Include="Converters\ObjectToListItemConverter.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\Member.cs" />

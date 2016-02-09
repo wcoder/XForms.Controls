@@ -33,6 +33,8 @@ namespace XFormsControls.ViewModels
 			}
 		}
 
+		public ICommand SelectBookCommand { get; private set; }
+
 		public MainPageViewModel()
 		{
 			Members = new ObservableCollection<Member>
@@ -49,6 +51,11 @@ namespace XFormsControls.ViewModels
 				new Book { Name = "Book 1" },
 				new Book { Name = "Book 2" }
 			};
+
+			SelectBookCommand = new Command<Book>(book =>
+			{
+				
+			});
 		}
 
 		private void AddBook()

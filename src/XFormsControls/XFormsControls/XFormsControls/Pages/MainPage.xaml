@@ -23,5 +23,7 @@
 
 		<Button Command="{Binding AddCommand}" Text="Add book"/>
 		<controls:CustomListView ItemsSource="{Binding Books}" ItemTemplate="MainItemTemplate" />
+
+		<controls:XListView ItemsSource="{Binding Books}" SelectedItemCommand="{Binding SelectBookCommand}" />
 	</StackLayout>	
 </ContentPage>
