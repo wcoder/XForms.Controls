@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:controls="clr-namespace:XForms.Controls;assembly=XForms.Controls"
+	xmlns:vm="clr-namespace:XForms.Controls.Samples.ViewModels;assembly=XForms.Controls.Samples"
+	x:Class="XForms.Controls.Samples.Pages.MainPage"
+	Title="{Binding Title}">
+	
+	<ContentPage.BindingContext>
+		<vm:MainViewModel />
+	</ContentPage.BindingContext>
+	
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+
+		<!--<controls:CommandListView
+			ItemsSource="{Binding Books}"
+			SelectItemCommand="{Binding SelectBookCommand}"/>-->
+	</Grid>
+	
+	
+</ContentPage>
