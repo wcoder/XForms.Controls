@@ -38,6 +38,7 @@
   <ItemGroup>
     <Compile Include="CommandListView.cs" />
     <Compile Include="ListPicker.cs" />
+    <Compile Include="NumberEntry.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TappedGestureAttached.cs" />
   </ItemGroup>
