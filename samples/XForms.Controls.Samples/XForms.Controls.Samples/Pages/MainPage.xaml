@@ -36,11 +36,14 @@
 		<controls:ListPicker
 			ItemsSource="{Binding Books}"
 			SelectedItem="{Binding PickerSelectedBook}"
+			SelectedItemCommand="{Binding SelectBookCommand}"
 			Converter="{StaticResource BookToListPickerItem}" />
 		
 		<controls:CommandListView
 			Grid.Row="1"
 			ItemsSource="{Binding Books}"
+			ResetSelection="False"
+			SelectedItem="{Binding PickerSelectedBook, Mode=TwoWay}" 
 			SelectedItemCommand="{Binding SelectBookCommand}"
 			ItemTemplate="{StaticResource BooksDataTemplate}" />
 			
