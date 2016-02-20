@@ -29,18 +29,24 @@
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto" />
+			<RowDefinition Height="Auto" />
 			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
 
+		<StackLayout Grid.Row="0">
+			<Label controls:TappedGestureAttached.Command="{Binding TapCommand}" Text="Tap me!" />
+			<Label IsVisible="{Binding IsTouched}" Text="Touched!" />
+		</StackLayout>
 		
 		<controls:ListPicker
+			Grid.Row="1"
 			ItemsSource="{Binding Books}"
 			SelectedItem="{Binding PickerSelectedBook}"
 			SelectedItemCommand="{Binding SelectBookCommand}"
 			Converter="{StaticResource BookToListPickerItem}" />
 		
 		<controls:CommandListView
-			Grid.Row="1"
+			Grid.Row="2"
 			ItemsSource="{Binding Books}"
 			ResetSelection="False"
 			SelectedItem="{Binding PickerSelectedBook, Mode=TwoWay}" 
