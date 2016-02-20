@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace XForms.Controls
@@ -21,6 +22,11 @@ namespace XForms.Controls
 					default(object), BindingMode.TwoWay, null,
 					new BindableProperty.BindingPropertyChangedDelegate<object>(OnSelectedItemChanged), null, null);
 
+		public static BindableProperty SelectedItemCommandProperty =
+				BindableProperty.Create<ListPicker, ICommand>(o => o.SelectItemCommand,
+					default(ICommand), BindingMode.OneWay, null,
+					null, null, null);
+
 		public IValueConverter Converter
 		{
 			get { return (IValueConverter)GetValue(ConverterProperty); }
@@ -39,9 +45,16 @@ namespace XForms.Controls
 			set { SetValue(SelectedItemProperty, value); }
 		}
 
+		public ICommand SelectItemCommand
+		{
+			get { return (ICommand)GetValue(SelectedItemCommandProperty); }
+			set { SetValue(SelectedItemCommandProperty, value); }
+		}
+
 		public ListPicker()
 		{
 			SelectedIndexChanged += OnSelectedIndexChanged;
+			
 		}
 
 		private static void OnItemsSourceChanged(BindableObject bindable, IEnumerable oldvalue, IEnumerable newvalue)
@@ -80,6 +93,8 @@ namespace XForms.Controls
 			else
 			{
 				SelectedItem = ItemsSource[SelectedIndex];
+
+				SelectItemCommand?.Execute(SelectedItem);
 			}
 		}
 		private static void OnSelectedItemChanged(BindableObject bindable, object oldvalue, object newvalue)
