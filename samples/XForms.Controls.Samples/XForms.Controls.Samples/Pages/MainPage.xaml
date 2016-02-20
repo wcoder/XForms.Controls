@@ -11,15 +11,27 @@
 		<vm:MainViewModel />
 	</ContentPage.BindingContext>
 	
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			
+			<DataTemplate x:Key="BooksDataTemplate">
+				<TextCell Text="{Binding Name}" />
+			</DataTemplate>
+	
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="Auto" />
 			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
 
-		<!--<controls:CommandListView
+		<controls:CommandListView
 			ItemsSource="{Binding Books}"
-			SelectItemCommand="{Binding SelectBookCommand}"/>-->
+			SelectedItemCommand="{Binding SelectBookCommand}"
+			ItemTemplate="{StaticResource BooksDataTemplate}" />
+			
 	</Grid>
 	
 	
