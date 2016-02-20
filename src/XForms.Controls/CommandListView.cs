@@ -5,8 +5,8 @@ namespace XForms.Controls
 {
 	public class CommandListView : ListView
 	{
-		public static BindableProperty SelectedItemCommandProperty =
-				BindableProperty.Create<CommandListView, ICommand>(o => o.SelectItemCommand,
+		public static BindableProperty ItemSelectedCommandProperty =
+				BindableProperty.Create<CommandListView, ICommand>(o => o.ItemSelectedCommand,
 					default(ICommand), BindingMode.OneWay, null,
 					null, null, null);
 
@@ -15,10 +15,10 @@ namespace XForms.Controls
 					true, BindingMode.OneWay, null,
 					null, null, null);
 
-		public ICommand SelectItemCommand
+		public ICommand ItemSelectedCommand
 		{
-			get { return (ICommand)GetValue(SelectedItemCommandProperty); }
-			set { SetValue(SelectedItemCommandProperty, value); }
+			get { return (ICommand)GetValue(ItemSelectedCommandProperty); }
+			set { SetValue(ItemSelectedCommandProperty, value); }
 		}
 
 		public bool ResetSelection
@@ -37,11 +37,11 @@ namespace XForms.Controls
 			var listView = sender as ListView;
 			if (listView != null)
 			{
-				if (SelectItemCommand != null)
+				if (ItemSelectedCommand != null)
 				{
 					if (listView.SelectedItem != null)
 					{
-						SelectItemCommand.Execute(listView.SelectedItem);
+						ItemSelectedCommand.Execute(listView.SelectedItem);
 						if (ResetSelection)
 						{
 							listView.SelectedItem = null;

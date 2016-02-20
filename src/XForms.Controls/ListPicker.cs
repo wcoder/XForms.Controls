@@ -22,8 +22,8 @@ namespace XForms.Controls
 					default(object), BindingMode.TwoWay, null,
 					new BindableProperty.BindingPropertyChangedDelegate<object>(OnSelectedItemChanged), null, null);
 
-		public static BindableProperty SelectedItemCommandProperty =
-				BindableProperty.Create<ListPicker, ICommand>(o => o.SelectItemCommand,
+		public static BindableProperty ItemSelectedCommandProperty =
+				BindableProperty.Create<ListPicker, ICommand>(o => o.ItemSelectedCommand,
 					default(ICommand), BindingMode.OneWay, null,
 					null, null, null);
 
@@ -45,10 +45,10 @@ namespace XForms.Controls
 			set { SetValue(SelectedItemProperty, value); }
 		}
 
-		public ICommand SelectItemCommand
+		public ICommand ItemSelectedCommand
 		{
-			get { return (ICommand)GetValue(SelectedItemCommandProperty); }
-			set { SetValue(SelectedItemCommandProperty, value); }
+			get { return (ICommand)GetValue(ItemSelectedCommandProperty); }
+			set { SetValue(ItemSelectedCommandProperty, value); }
 		}
 
 		public ListPicker()
@@ -94,7 +94,7 @@ namespace XForms.Controls
 			{
 				SelectedItem = ItemsSource[SelectedIndex];
 
-				SelectItemCommand?.Execute(SelectedItem);
+				ItemSelectedCommand?.Execute(SelectedItem);
 			}
 		}
 		private static void OnSelectedItemChanged(BindableObject bindable, object oldvalue, object newvalue)

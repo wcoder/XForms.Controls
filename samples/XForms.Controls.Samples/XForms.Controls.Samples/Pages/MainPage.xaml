@@ -42,15 +42,15 @@
 			Grid.Row="1"
 			ItemsSource="{Binding Books}"
 			SelectedItem="{Binding PickerSelectedBook}"
-			SelectedItemCommand="{Binding SelectBookCommand}"
+			ItemSelectedCommand="{Binding SelectBookCommand}"
 			Converter="{StaticResource BookToListPickerItem}" />
 		
 		<controls:CommandListView
 			Grid.Row="2"
 			ItemsSource="{Binding Books}"
 			ResetSelection="False"
-			SelectedItem="{Binding PickerSelectedBook, Mode=TwoWay}" 
-			SelectedItemCommand="{Binding SelectBookCommand}"
+			SelectedItem="{Binding PickerSelectedBook, Mode=TwoWay}"
+			ItemSelectedCommand="{Binding SelectBookCommand}"
 			ItemTemplate="{StaticResource BooksDataTemplate}" />
 			
 	</Grid>
