@@ -4,6 +4,7 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	xmlns:controls="clr-namespace:XForms.Controls;assembly=XForms.Controls"
 	xmlns:vm="clr-namespace:XForms.Controls.Samples.ViewModels;assembly=XForms.Controls.Samples"
+	xmlns:converters="clr-namespace:XForms.Controls.Samples.Converters;assembly=XForms.Controls.Samples"
 	x:Class="XForms.Controls.Samples.Pages.MainPage"
 	Title="{Binding Title}">
 	
@@ -14,6 +15,10 @@
 	<ContentPage.Resources>
 		<ResourceDictionary>
 			
+			<!-- Converters -->
+			<converters:BookToListPickerItemConverter x:Key="BookToListPickerItem" />
+			
+			<!-- Templates -->
 			<DataTemplate x:Key="BooksDataTemplate">
 				<TextCell Text="{Binding Name}" />
 			</DataTemplate>
@@ -27,7 +32,14 @@
 			<RowDefinition Height="*" />
 		</Grid.RowDefinitions>
 
+		
+		<controls:ListPicker
+			ItemsSource="{Binding Books}"
+			SelectedItem="{Binding PickerSelectedBook}"
+			Converter="{StaticResource BookToListPickerItem}" />
+		
 		<controls:CommandListView
+			Grid.Row="1"
 			ItemsSource="{Binding Books}"
 			SelectedItemCommand="{Binding SelectBookCommand}"
 			ItemTemplate="{StaticResource BooksDataTemplate}" />
