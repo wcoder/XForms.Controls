@@ -7,5 +7,5 @@ Custom controls for Xamarin Forms
 |:---------------:|:---:|:-------:|:--------:|:---:|
 | CommandListView | +   | +       | +        | +   |
 | ListPicker      | +   | +       | +        | +   |
-| NumberEntry     | +   | +       | -        | -   |
+| NumberEntry     | +   | +       | -/+      | -/+ |
 
