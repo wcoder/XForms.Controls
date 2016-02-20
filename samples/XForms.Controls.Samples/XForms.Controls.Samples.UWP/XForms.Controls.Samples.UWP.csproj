@@ -128,6 +128,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\src\XForms.Controls.UWP\XForms.Controls.UWP.csproj">
+      <Project>{7a614ed3-d435-4978-8821-6eaa6e65e8d4}</Project>
+      <Name>XForms.Controls.UWP</Name>
+    </ProjectReference>
     <ProjectReference Include="..\XForms.Controls.Samples\XForms.Controls.Samples.csproj">
       <Name>XForms.Controls.Samples</Name>
     </ProjectReference>
