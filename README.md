@@ -8,4 +8,7 @@ Custom controls for Xamarin Forms
 | CommandListView | +   | +       | +        | +   |
 | ListPicker      | +   | +       | +        | +   |
 | NumberEntry     | +   | +       | -/+      | -/+ |
+| CheckBox        | +   | +       | -        | +   |
+
+> `-/+` - for mobile
 

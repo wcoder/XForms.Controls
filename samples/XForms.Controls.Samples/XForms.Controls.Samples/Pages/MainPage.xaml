@@ -37,6 +37,7 @@
 		<controls:NumberEntry Grid.Row="0" />
 		
 		<StackLayout Grid.Row="1">
+			<controls:CheckBox />
 			<Label controls:TappedGestureAttached.Command="{Binding TapCommand}" Text="Tap me!" />
 			<Label IsVisible="{Binding IsTouched}" Text="Touched!" />
 		</StackLayout>

@@ -107,6 +107,8 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckBoxRenderer.cs" />
+    <Compile Include="Helpers\ValueConverters.cs" />
     <Compile Include="NumbersEntryRenderer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\XForms.Controls.UWP.rd.xml" />
